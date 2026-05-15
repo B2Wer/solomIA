@@ -7,19 +7,19 @@ Sistema de IA corporativa multitenante con RAG por departamento, desplegado en h
 
 ## Arquitectura
 
-Mac (Bahía / Admin) ─────────────────────────────
-├── Monitoreo → Uptime Kuma
-├── Proxy → Nginx
-├── Terminal personal → Script Groq
-└── Acceso web a servicios de la Dell
-│
-│ vía web / red local
-▼
-Dell Inspiron (Motor principal) ─────────────────
-├── Contenedor Depto 1 → Open WebUI → Groq → ChromaDB
-├── Contenedor Depto 2 → Open WebUI → Groq → ChromaDB
-├── Contenedor Depto 3 → Open WebUI → Groq → ChromaDB
-└── Contenedor VIP → Ollama local (VRAM) → datos sensibles
+**Mac — Bahía de consulta y administración remota**
+- Monitoreo de la Dell → Uptime Kuma
+- Proxy de acceso → Nginx
+- Terminal personal → Script Groq
+- Acceso web a todos los servicios de la Dell
+
+**Conexión:** vía web / red local
+
+**Dell Inspiron — Motor principal**
+- Contenedor Depto 1 → Open WebUI → Groq → ChromaDB
+- Contenedor Depto 2 → Open WebUI → Groq → ChromaDB
+- Contenedor Depto 3 → Open WebUI → Groq → ChromaDB
+- Contenedor VIP → Ollama local (VRAM) → datos sensibles
 
 ---
 
