@@ -1,0 +1,17 @@
+# Entornos virtuales / cache Python
+venv/
+__pycache__/
+*.pyc
+
+# Secrets reales — usar infraestructura/compose/.env (nunca commitear)
+.env
+infraestructura/compose/.env
+
+# Grabaciones de terminal: pueden contener IPs internas, prompts de
+# contraseña, historial de comandos u otra información operativa sensible.
+# No se han auditado línea por línea para descartar secretos.
+grabaciones_terminal/
+administracion/grabaciones-terminal/
+
+# Backups locales generados en runtime
+infraestructura/backups/
