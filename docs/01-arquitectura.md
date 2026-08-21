@@ -28,6 +28,15 @@ compartida. Se apoya en **dos máquinas físicas/lógicas** distintas:
 >
 > Tal como está el código hoy, el **backend de LLM en producción es Groq**
 > (API cloud), no la Máquina B ni el Ollama local — ver `1.3`.
+>
+> **Actualización 2026-08-21:** con acceso directo por SSH a la Máquina B
+> se confirmó que **no es un host de inferencia**: no corre Ollama ni
+> ningún backend LLM. Es la "bahía de control" descrita en el README raíz
+> del proyecto — corre Nginx Proxy Manager, Uptime Kuma, Homepage y
+> Netdata como contenedores Docker, sin GPU relevante para inferencia.
+> Detalle completo en [`05-mac-bahia-control.md`](05-mac-bahia-control.md).
+> El resto de esta nota (backend real = Groq, no esta máquina) sigue
+> siendo correcto.
 
 ## 1.2 Diagrama de comunicación
 
@@ -60,9 +69,10 @@ compartida. Se apoya en **dos máquinas físicas/lógicas** distintas:
               └──────────────────┘
 
 ┌─────────────────────────────────────────────────────────────┐
-│ Máquina B — Host de Inferencia (separada)                    │
+│ Máquina B — Bahía de control (confirmado, ver 05)             │
 │  Alcanzable por VPN privada. Acceso SSH administrativo.      │
-│  Rol productivo no confirmado en el código del repo.         │
+│  NPM + Uptime Kuma + Homepage + Netdata. Sin rol de          │
+│  inferencia (sin GPU, sin Ollama).                            │
 └─────────────────────────────────────────────────────────────┘
 ```
 

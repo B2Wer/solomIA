@@ -18,6 +18,7 @@ Documentación generada a partir de la exploración del proyecto el 2026-08-20.
 2. [Pipeline de procesamiento documental (RAG)](02-pipeline-rag.md)
 3. [Configuración de contenedores departamentales](03-contenedores-departamentales.md)
 4. [Decisiones técnicas y hallazgos](04-decisiones-tecnicas.md)
+5. [Mac — bahía de control](05-mac-bahia-control.md) — Nginx Proxy Manager, Uptime Kuma, Homepage, Netdata (explorado por SSH, 2026-08-21)
 
 ## Alcance
 
